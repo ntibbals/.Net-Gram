@@ -1,3 +1,20 @@
 ﻿@page
+@using ASP.Gram.Models.Interfaces
 
+@inject IPosts PostService
 Hi Ther from page
+
+@{ 
+    var posts = await PostService.GetPosts();
+}
+
+@foreach (var item in posts)
+{
+    <div id="post-contain">
+        <h3>@item.Author</h3>
+        <div id="image-contain">
+            <img src="@item.ImageURL" id="post-image" alt="Post Image" />
+        </div>
+        <h3>@item.Details</h3>
+    </div>
+}

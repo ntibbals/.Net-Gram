@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ASP.Gram.Data;
+using ASP.Gram.Models.Interfaces;
+using ASP.Gram.Models.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +27,7 @@ namespace ASP.Gram
         {
             services.AddMvc();
             services.AddDbContext<GramDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IPosts, PostManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
