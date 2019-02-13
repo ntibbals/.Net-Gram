@@ -3,9 +3,12 @@
     color: #fff;
     text-align: center;
 }
-
+font-family: 'Kaushan Script', cursive;
+font-family: 'Yeseva One', cursive;
+font-family: 'Merienda One', cursive;
+font-family: 'Sue Ellen Francisco', cursive;
+font-family: 'IM Fell English SC', serif;
 /************* HEADER *******************/
-
 #headcontain {
     text-align: left;
     width: 100%;
@@ -121,6 +124,7 @@ navToggle span:first-child {
 
 #indexcontain {
     height: 9vw;
+    font-family: 'Yeseva One', cursive;
 }
 
 #index-title {
@@ -128,7 +132,7 @@ navToggle span:first-child {
     padding-left: 13vw;
 }
 
-#hot{
+#hot {
+    font-family: 'Kaushan Script', cursive;
     color: orangered;
-
 }

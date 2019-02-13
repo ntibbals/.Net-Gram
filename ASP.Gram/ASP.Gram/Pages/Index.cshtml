@@ -10,6 +10,9 @@
     var posts = await PostService.GetPosts();
 }
 
+<a asp-page="/Posts/Manage">Add a Post</a>
+
+
 @foreach (var item in posts)
 {
     <div id="post-contain">
@@ -24,4 +27,3 @@
     </div>
 }
 
-<a asp-page="/Posts/Manage">Add a Post</a>
