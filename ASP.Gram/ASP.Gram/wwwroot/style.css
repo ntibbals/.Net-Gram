@@ -15,20 +15,20 @@ font-family: 'IM Fell English SC', serif;
 }
 
 header {
-    background: #fff;
-    color: #000;
+    background: url("flame.png") center;
+    color: #fff;
     text-align: left;
-    border: solid 2px black;
+    border: solid 2px #fff;
 }
 
 a {
     text-decoration: none;
-    color: lawngreen;
+    color: orangered;
     transition: color 0.3s ease;
 }
 
 span {
-    background-color: #000;
+    background-color: #fff;
 }
 
 a:hover {
@@ -93,7 +93,7 @@ a:hover {
     height: 4px;
     margin-bottom: 5px;
     position: relative;
-    background: #000;
+    background: #fff;
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;
@@ -135,4 +135,159 @@ navToggle span:first-child {
 #hot {
     font-family: 'Kaushan Script', cursive;
     color: orangered;
+}
+
+/**************** MAIN ***************/
+
+#post-contain {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    border: solid 2px #fff;
+    margin-top: 2vw;
+    width: 70vw;
+    min-width: 350px;
+    min-height: 450px;
+    border-radius: .5em;
+    padding: 1vw;
+}
+
+#content-contain {
+    width: 35vw;
+}
+#post-image {
+    width: 30vw;
+    height: 30vw;
+    min-width: 300px;
+    min-height: 350px;
+    border-radius: .5em;
+}
+
+#button {
+    padding: .3vw;
+    background-color: #fff;
+    padding-left: .7vw;
+    padding-right: .7vw;
+    border: solid 2px #fff;
+    border-radius: .5em;
+    font-size: 1.5vw;
+}
+#button:hover{
+    color: #000;
+}
+#but-contain{
+    margin: 1.5vw;
+    text-align: right;
+}
+
+#auth-contain {
+    font-family: 'IM Fell English SC', serif;
+    margin: 1vw;
+    text-align: left;
+    font-size: 2vw;
+    color: orangered;
+}
+
+#detail-contain {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 3vw;
+    margin: 1vw;
+}
+#button-new {
+    padding: .3vw;
+    background-color: #fff;
+    padding-left: .7vw;
+    padding-right: .7vw;
+    border: solid 2px #fff;
+    border-radius: .5em;
+    font-size: 1.5vw;
+    float: right;
+}
+/****************MANAGE PAGE****************/
+
+#form-contain {
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: solid 2px #fff;
+    margin-top: 2vw;
+    width: 40vw;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: .5em;
+    padding: 1vw;
+    padding-top: 3vw;
+}
+#url-contain{
+    padding-right: 1.75vw;
+}
+#input{
+    border-radius: .5em;
+    margin-bottom: 1.5vw;
+}
+/*#form {
+    flex-direction: column;
+}*/
+
+@media screen and (max-width: 700px) {
+
+    #post-contain {
+        display: block;
+        margin: 0 auto;
+        border: solid 2px #fff;
+        margin-top: 2vw;
+        width: 40vw;
+        min-width: 350px;
+        min-height: 450px;
+        border-radius: .5em;
+        padding: 1vw;
+    }
+    #content-contain {
+        width: 100%;
+    }
+    #post-image {
+        width: 40vw;
+        height: 40vw;
+        min-width: 300px;
+        min-height: 350px;
+        border-radius: .5em;
+    }
+    #button-new{
+        display: none;
+    }
+    #button {
+        padding: 2vw;
+        background-color: #fff;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        border: solid 2px #fff;
+        border-radius: .5em;
+        font-size: 3vw;
+    }
+
+        #button:hover {
+            color: #000;
+        }
+
+    #but-contain {
+        margin: 1.5vw;
+        text-align: right;
+    }
+
+    #auth-contain {
+        font-family: 'IM Fell English SC', serif;
+        margin: 1vw;
+        text-align: left;
+        font-size: 5vw;
+        color: orangered;
+    }
+
+    #detail-contain {
+        font-family: 'Sue Ellen Francisco', cursive;
+        font-size: 6vw;
+        margin: 1vw;
+    }
+    #url-contain {
+        padding-right: 5.75vw;
+    }
 }

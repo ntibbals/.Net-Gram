@@ -10,16 +10,25 @@
     <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
 
 </div>*@
-
-<form method="post">
-    <label asp-for="Post.Author"></label>
-    <input asp-for="Post.Author" />
-
-    <label asp-for="Post.Details"></label>
-    <input asp-for="Post.Details" />
-
-    <label asp-for="Post.ImageURL"></label>
-    <input asp-for="Post.ImageURL" />
-    <button type="submit" value="Save">Save</button>
-    <button type="submit" asp-page-handler="Delete">Delete</button>
+<div id="form-contain">
+    <form method="post" id="form">
+        <div>
+            <label asp-for="Post.Author"></label>
+            <input asp-for="Post.Author" id="input" />
+        </div>
+        <div>
+            <label asp-for="Post.Details"></label>
+            <input asp-for="Post.Details" id="input" />
+        </div>
+        <div id="url-contain">
+            <label asp-for="Post.ImageURL"></label>
+            <input asp-for="Post.ImageURL"  id="input" />
+        </div>
+        <div id="but-contain">
+            <button type="submit" value="Save" id="button">Save</button>
+        </div>
+        <div id="but-contain">
+                <button type="submit" asp-page-handler="Delete" id="button">Delete</button>
+        </div>
 </form>
+    </div>
