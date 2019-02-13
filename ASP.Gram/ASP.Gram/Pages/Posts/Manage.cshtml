@@ -11,6 +11,10 @@
 
 </div>*@
 <div id="form-contain">
+    <div id="image-contain">
+        <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
+
+    </div>
     <form method="post" id="form">
         <div>
             <label asp-for="Post.Author"></label>
@@ -22,13 +26,13 @@
         </div>
         <div id="url-contain">
             <label asp-for="Post.ImageURL"></label>
-            <input asp-for="Post.ImageURL"  id="input" />
+            <input asp-for="Post.ImageURL" id="input" />
         </div>
         <div id="but-contain">
             <button type="submit" value="Save" id="button">Save</button>
         </div>
         <div id="but-contain">
-                <button type="submit" asp-page-handler="Delete" id="button">Delete</button>
+            <button type="submit" asp-page-handler="Delete" id="button">Delete</button>
         </div>
-</form>
-    </div>
+    </form>
+</div>

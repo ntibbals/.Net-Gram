@@ -2,6 +2,7 @@
     background-color: #000;
     color: #fff;
     text-align: center;
+    font-family: 'Merienda One', cursive;
 }
 font-family: 'Kaushan Script', cursive;
 font-family: 'Yeseva One', cursive;
@@ -154,6 +155,8 @@ navToggle span:first-child {
 
 #content-contain {
     width: 35vw;
+    margin-top: 7vw;
+    padding-left: 3vw;
 }
 #post-image {
     width: 30vw;
@@ -225,9 +228,9 @@ navToggle span:first-child {
     border-radius: .5em;
     margin-bottom: 1.5vw;
 }
-/*#form {
-    flex-direction: column;
-}*/
+#form {
+    margin-top: 1vw;;
+}
 
 @media screen and (max-width: 700px) {
 
@@ -244,6 +247,7 @@ navToggle span:first-child {
     }
     #content-contain {
         width: 100%;
+        
     }
     #post-image {
         width: 40vw;
