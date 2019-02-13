@@ -7,5 +7,9 @@ namespace ASP.Gram.Models
 {
     public class Posts
     {
+        public string Author { get; set; }
+        public string ImageURL { get; set; }
+        public string Details { get; set; }
+        public string Comment { get; set; }
     }
 }
