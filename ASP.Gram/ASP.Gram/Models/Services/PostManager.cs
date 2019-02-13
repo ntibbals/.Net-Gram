@@ -1,5 +1,6 @@
 ﻿using ASP.Gram.Data;
 using ASP.Gram.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +15,44 @@ namespace ASP.Gram.Models.Services
         {
             _context = context;
         }
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            Posts post = await _context.Posts.FindAsync(id);
+            if(post != null)
+            {
+                _context.Remove(post);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task<Posts> FindPost(int id)
+        public async Task<Posts> FindPost(int id)
         {
-            throw new NotImplementedException();
+            Posts post = await _context.Posts.FirstOrDefaultAsync(p => p.ID == id);
+
+            return post;
         }
 
-        public Task<List<Posts>> GetPosts()
+        public async Task<List<Posts>> GetPosts()
         {
-            throw new NotImplementedException();
+            return await _context.Posts.ToListAsync();
         }
 
-        public Task SaveAsync(Posts post)
+        public async Task SaveAsync(Posts post)
         {
-            throw new NotImplementedException();
+            Posts po = await _context.Posts.FirstOrDefaultAsync(p => p.ID == post.ID);
+
+            if (post == null)
+            {
+                _context.Posts.Add(post);
+            }
+
+            else
+            {
+                po = post;
+                _context.Posts.Update(po);
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }
