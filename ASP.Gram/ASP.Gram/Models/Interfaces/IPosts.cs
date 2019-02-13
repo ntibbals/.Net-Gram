@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace ASP.Gram.Models.Interfaces
 {
-    interface IPosts
+    public interface IPosts
     {
+
+        Task<Posts> FindPost(int id);
+        Task<List<Posts>> GetPosts();
+        Task SaveAsync(Posts post);
+        Task DeleteAsync(int id);
     }
 }
