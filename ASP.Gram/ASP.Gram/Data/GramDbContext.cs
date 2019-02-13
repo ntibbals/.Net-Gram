@@ -14,6 +14,27 @@ namespace ASP.Gram.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Posts>().HasData(
+                new Posts
+                {
+                    ID = 1,
+                    Author = "JTT",
+                    ImageURL = "image.jpg",
+                    Details = "Check out the orcas!"
+                },
+                new Posts
+                {
+                    ID = 2,
+                    Author = "Miss Jackson",
+                    ImageURL = "image2.jpg",
+                    Details = "I am for real!"
+                }
+
+            );
+        }
+
         public DbSet<Posts> Posts { get; set; }
     }
 }
