@@ -1,0 +1,16 @@
+﻿@page "{id}"
+@model ASP.Gram.Pages.Posts.IndexModel
+@{ 
+    Layout = "_Layout";
+}
+
+<div>
+    <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
+
+</div>
+<div>
+    <label asp-for"Post.Author">@Model.Post.Author : </label>
+    <label asp-for="Post.Details">@Model.Post.Details</label>
+</div>
+
+<a asp-page="/Posts/Manage" asp-route-id="@Model.Post.ID">View</a>

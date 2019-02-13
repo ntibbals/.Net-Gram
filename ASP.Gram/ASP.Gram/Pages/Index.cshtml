@@ -2,19 +2,22 @@
 @using ASP.Gram.Models.Interfaces
 
 @inject IPosts PostService
-Hi Ther from page
+@{
+    Layout = "_Layout";
+}
 
-@{ 
+@{
     var posts = await PostService.GetPosts();
 }
 
 @foreach (var item in posts)
 {
-    <div id="post-contain">
-        <h3>@item.Author</h3>
-        <div id="image-contain">
-            <img src="@item.ImageURL" id="post-image" alt="Post Image" />
-        </div>
-        <h3>@item.Details</h3>
+<div id="post-contain">
+    <div id="image-contain">
+        <img src="@item.ImageURL" id="post-image" alt="Post Image" />
     </div>
+    <h3>@item.Author</h3>
+
+    <h3>@item.Details</h3>
+</div>
 }

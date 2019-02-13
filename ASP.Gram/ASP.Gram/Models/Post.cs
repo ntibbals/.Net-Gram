@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ASP.Gram.Models
 {
-    public class Posts
+    public class Post
     {
         public int ID { get; set; }
         public string Author { get; set; }

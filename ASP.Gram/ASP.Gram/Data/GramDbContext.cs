@@ -16,15 +16,15 @@ namespace ASP.Gram.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Posts>().HasData(
-                new Posts
+            modelBuilder.Entity<Post>().HasData(
+                new Post
                 {
                     ID = 1,
                     Author = "JTT",
                     ImageURL = "image.jpg",
                     Details = "Check out the orcas!"
                 },
-                new Posts
+                new Post
                 {
                     ID = 2,
                     Author = "Miss Jackson",
@@ -35,6 +35,6 @@ namespace ASP.Gram.Data
             );
         }
 
-        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 }

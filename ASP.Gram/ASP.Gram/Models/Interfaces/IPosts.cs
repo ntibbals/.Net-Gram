@@ -8,9 +8,9 @@ namespace ASP.Gram.Models.Interfaces
     public interface IPosts
     {
 
-        Task<Posts> FindPost(int id);
-        Task<List<Posts>> GetPosts();
-        Task SaveAsync(Posts post);
+        Task<Post> FindPost(int id);
+        Task<List<Post>> GetPosts();
+        Task SaveAsync(Post post);
         Task DeleteAsync(int id);
     }
 }
