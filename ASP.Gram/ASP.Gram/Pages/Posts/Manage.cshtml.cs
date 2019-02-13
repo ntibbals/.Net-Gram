@@ -36,5 +36,12 @@ namespace ASP.Gram.Pages.Posts
 
             return RedirectToPage("/Posts/Index", new { id = post.ID });
         }
+
+        public async Task<IActionResult> OnPostDelete()
+        {
+            await _post.DeleteAsync(ID.Value);
+
+            return RedirectToPage("/Index");
+        }
     }
 }

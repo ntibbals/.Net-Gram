@@ -1,8 +1,25 @@
-﻿@page "{id}"
+﻿@page "{id?}"
 @model ASP.Gram.Pages.Posts.ManageModel
 @{
     Layout = "_Layout";
 
 }
-<h1> Manage Posts</h1>
+<h1> NET A POST</h1>
 
+@*<div>
+    <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
+
+</div>*@
+
+<form method="post">
+    <label asp-for="Post.Author"></label>
+    <input asp-for="Post.Author" />
+
+    <label asp-for="Post.Details"></label>
+    <input asp-for="Post.Details" />
+
+    <label asp-for="Post.ImageURL"></label>
+    <input asp-for="Post.ImageURL" />
+    <button type="submit" value="Save">Save</button>
+    <button type="submit" asp-page-handler="Delete">Delete</button>
+</form>
