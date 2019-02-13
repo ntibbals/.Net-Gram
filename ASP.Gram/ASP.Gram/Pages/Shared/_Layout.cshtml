@@ -7,8 +7,33 @@
     <link href="~/style.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <header>
+        <div id="headcontain">
+
+            <nav id="hamburger" role="navigation">
+                <div id="navToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="nav">
+                        <li><a id="links" href='/'> Home </a></li>
+                        <li><a id="links" href='/Posts/Manage'> New Post </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="indexcontain">
+                <h1 id="index-title"> ASP <strong id="hot">HOT</strong> GRAM</h1>
+            </div>
+        </div>
+    </header>
+    <main>
         @RenderBody()
-    </div>
+    </main>
+    <footer>
+        <div>
+            <p>© 2019 Copyright</p>
+        </div>
+    </footer>
 </body>
 </html>
