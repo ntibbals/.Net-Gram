@@ -22,7 +22,7 @@ header {
     min-height: 40px;
     color: #fff;
     text-align: left;
-    border: solid 2px #fff;
+    border: solid 2px #000;
     animation: animate-flame linear 7s infinite;
 }
 
