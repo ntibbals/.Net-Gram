@@ -15,7 +15,7 @@
         <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
 
     </div>
-    <form method="post" id="form">
+    <form method="post" enctype="multipart/form-data" id="form">
         <div>
             <label asp-for="Post.Author"></label>
             <input asp-for="Post.Author" id="input" />
@@ -25,8 +25,8 @@
             <input asp-for="Post.Details" id="input" />
         </div>
         <div id="url-contain">
-            <label asp-for="Post.ImageURL"></label>
-            <input asp-for="Post.ImageURL" id="input" />
+            <label asp-for="Image"></label>
+            <input asp-for="Image" type="file" id="input" />
         </div>
         <div id="but-contain">
             <button type="submit" value="Save" id="button">Save</button>

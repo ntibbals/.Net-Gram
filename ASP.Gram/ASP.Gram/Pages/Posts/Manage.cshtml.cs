@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ASP.Gram.Models;
 using ASP.Gram.Models.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace ASP.Gram.Pages.Posts
 {
@@ -16,9 +20,18 @@ namespace ASP.Gram.Pages.Posts
         public Post Post { get; set; }
         [FromRoute]
         public int? ID { get; set; }
-        public ManageModel(IPosts post)
+
+        [BindProperty]
+        public IFormFile Image { get; set; }
+
+        public Models.Utilities.Blob BlobImage { get; set; }
+
+        public ManageModel(IPosts post, IConfiguration configuration)
         {
             _post = post;
+            ///Reference to blob storage account gateway to storage account
+            BlobImage = new Models.Utilities.Blob(configuration); 
+            
         }
         public async Task OnGetAsync()
         {
@@ -29,8 +42,28 @@ namespace ASP.Gram.Pages.Posts
         {
             var post = await _post.FindPost(ID.GetValueOrDefault()) ?? new Post();
             post.Author = Post.Author;
-            post.ImageURL = Post.ImageURL;
+            //post.ImageURL = Post.ImageURL;
             post.Details = Post.Details;
+
+            if(Image != null)
+            {
+                ///create temp file to hold image
+                var filePath = Path.GetTempFileName();
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Image.CopyToAsync(stream); ///copy image to file
+                }
+
+                var container = await BlobImage.GetContainer("images");
+
+                BlobImage.UploadFile( Image.FileName, filePath, container);
+
+                CloudBlob blob = await BlobImage.GetBlob(Image.FileName, container.Name);
+
+                post.ImageURL = blob.Uri.ToString();
+
+
+            }
 
             await _post.SaveAsync(post);
 
