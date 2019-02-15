@@ -26,11 +26,14 @@ namespace ASP.Gram.Pages.Posts
 
         public Models.Utilities.Blob BlobImage { get; set; }
 
+        public Comments Comment { get; set; }
+
         public ManageModel(IPosts post, IConfiguration configuration)
         {
             _post = post;
             ///Reference to blob storage account gateway to storage account
-            BlobImage = new Models.Utilities.Blob(configuration); 
+            BlobImage = new Models.Utilities.Blob(configuration);
+            Comment = new Comments();
             
         }
         public async Task OnGetAsync()

@@ -57,5 +57,7 @@ namespace ASP.Gram.Data
         }
 
         public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Comments> Comments { get; set; }
     }
 }
