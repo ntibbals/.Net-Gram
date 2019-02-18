@@ -24,8 +24,9 @@ namespace ASP.Gram.Pages.Posts
             _comment = comment;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            Comment = await _comment.FindComment(ID.GetValueOrDefault()) ?? new Comments();
         }
     }
 }

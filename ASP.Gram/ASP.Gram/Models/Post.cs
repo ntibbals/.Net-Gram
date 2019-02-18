@@ -8,7 +8,7 @@ namespace ASP.Gram.Models
 {
     public class Post
     {
-        public int PostID { get; set; }
+        public int ID { get; set; }
 
         public string Author { get; set; }
 

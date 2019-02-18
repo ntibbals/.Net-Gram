@@ -16,10 +16,15 @@ namespace ASP.Gram.Models.Utilities
 
         public Blob(IConfiguration configuration)
         {
-            CloudStorageAccount = CloudStorageAccount.Parse(configuration["BlobConnectionString"]);
+            CloudStorageAccount = CloudStorageAccount.Parse(configuration["ConnectionStrings:BlobConnectionString"]);
             CloudBlobClient = CloudStorageAccount.CreateCloudBlobClient();
         }
 
+        /// <summary>
+        /// Retreive blob container from azure
+        /// </summary>
+        /// <param name="containerName">name of container</param>
+        /// <returns>Container</returns>
         public async Task<CloudBlobContainer> GetContainer(string containerName)
         {
             CloudBlobContainer cbc = CloudBlobClient.GetContainerReference(containerName);
@@ -29,6 +34,12 @@ namespace ASP.Gram.Models.Utilities
             return cbc;
         }
 
+        /// <summary>
+        /// Get blob storage
+        /// </summary>
+        /// <param name="imageName">name of image to retrive</param>
+        /// <param name="containerName">name of container</param>
+        /// <returns>object</returns>
         public async Task<CloudBlob> GetBlob(string imageName, string containerName)
         {
             CloudBlobContainer container = await GetContainer(containerName);
@@ -38,6 +49,12 @@ namespace ASP.Gram.Models.Utilities
             return blob;
         }
 
+        /// <summary>
+        /// Upload a file into blob storage
+        /// </summary>
+        /// <param name="fileName">file name</param>
+        /// <param name="filePath">file path</param>
+        /// <param name="cloudBlobContainer">container name</param>
         public void UploadFile(string fileName, string filePath, CloudBlobContainer cloudBlobContainer)
         {
             var blobFile = cloudBlobContainer.GetBlockBlobReference(fileName);

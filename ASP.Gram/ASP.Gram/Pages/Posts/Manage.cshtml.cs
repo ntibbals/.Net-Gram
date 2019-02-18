@@ -34,11 +34,20 @@ namespace ASP.Gram.Pages.Posts
             BlobImage = new Models.Utilities.Blob(configuration);
 
         }
+
+        /// <summary>
+        /// Get all posts
+        /// </summary>
+        /// <returns>all posts</returns>
         public async Task OnGetAsync()
         {
             Post = await _post.FindPost(ID.GetValueOrDefault()) ?? new Post();
         }
 
+        /// <summary>
+        /// Post posts
+        /// </summary>
+        /// <returns>posts</returns>
         public async Task<IActionResult> OnPost()
         {
             var post = await _post.FindPost(ID.GetValueOrDefault()) ?? new Post();
@@ -68,9 +77,13 @@ namespace ASP.Gram.Pages.Posts
 
             await _post.SaveAsync(post);
 
-            return RedirectToPage("/Posts/Index", new { id = post.PostID });
+            return RedirectToPage("/Posts/Index", new { id = post.ID });
         }
 
+        /// <summary>
+        /// Delete posts
+        /// </summary>
+        /// <returns>index page</returns>
         public async Task<IActionResult> OnPostDelete()
         {
             await _post.DeleteAsync(ID.Value);

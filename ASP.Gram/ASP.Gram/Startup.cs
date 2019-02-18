@@ -28,7 +28,7 @@ namespace ASP.Gram
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<GramDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<GramDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
             services.AddScoped<IPosts, PostManager>();
             services.AddScoped<IComment, CommentManager>();
 

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASP.Gram.Migrations
 {
     [DbContext(typeof(GramDbContext))]
-    [Migration("20190218003718_initial")]
-    partial class initial
+    [Migration("20190218180442_deploy2")]
+    partial class deploy2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

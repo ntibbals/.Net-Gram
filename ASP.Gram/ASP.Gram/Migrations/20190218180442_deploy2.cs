@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ASP.Gram.Migrations
 {
-    public partial class initial : Migration
+    public partial class deploy2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

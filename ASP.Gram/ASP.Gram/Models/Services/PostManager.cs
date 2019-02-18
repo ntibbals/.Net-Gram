@@ -15,6 +15,12 @@ namespace ASP.Gram.Models.Services
         {
             _context = context;
         }
+
+        /// <summary>
+        /// Delete Post
+        /// </summary>
+        /// <param name="id">post id</param>
+        /// <returns>view</returns>
         public async Task DeleteAsync(int id)
         {
             Post post = await _context.Posts.FindAsync(id);
@@ -25,21 +31,35 @@ namespace ASP.Gram.Models.Services
             }
         }
 
+        /// <summary>
+        /// Find post
+        /// </summary>
+        /// <param name="id">post id</param>
+        /// <returns>found post</returns>
         public async Task<Post> FindPost(int id)
         {
-            Post post = await _context.Posts.FirstOrDefaultAsync(p => p.PostID == id);
+            Post post = await _context.Posts.FirstOrDefaultAsync(p => p.ID == id);
 
             return post;
         }
 
+        /// <summary>
+        /// Get all posts
+        /// </summary>
+        /// <returns>all posts</returns>
         public async Task<List<Post>> GetPosts()
         {
             return await _context.Posts.ToListAsync();
         }
 
+        /// <summary>
+        /// Save post
+        /// </summary>
+        /// <param name="post">post object</param>
+        /// <returns>Saved Post</returns>
         public async Task SaveAsync(Post post)
         {
-            Post po = await _context.Posts.FirstOrDefaultAsync(p => p.PostID == post.PostID);
+            Post po = await _context.Posts.FirstOrDefaultAsync(p => p.ID == post.ID);
 
             if (post == null)
             {

@@ -28,6 +28,10 @@ namespace ASP.Gram.Pages.Posts
 
         public Post Post { get; set; }
 
+        /// <summary>
+        /// Get all posts and comments
+        /// </summary>
+        /// <returns>posts</returns>
         public async Task OnGet()
         {
             Post = await _post.FindPost(ID);
