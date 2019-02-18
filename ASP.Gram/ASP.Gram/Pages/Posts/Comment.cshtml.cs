@@ -9,29 +9,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASP.Gram.Pages.Posts
 {
-    public class IndexModel : PageModel
+    public class CommentModel : PageModel
     {
-        private readonly IPosts _post;
         private readonly IComment _comment;
 
+        [BindProperty]
         public Comments Comment { get; set; }
 
+        [FromRoute]
+        public int? ID { get; set; }
 
-        public IndexModel(IPosts post, IComment comment)
+        public CommentModel(IComment comment)
         {
-            _post = post;
             _comment = comment;
         }
 
-        [FromRoute]
-        public int ID { get; set; }
-
-        public Post Post { get; set; }
-
-        public async Task OnGet()
+        public void OnGet()
         {
-            Post = await _post.FindPost(ID);
-            Comment = await _comment.FindComment(ID);
         }
     }
 }

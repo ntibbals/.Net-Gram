@@ -40,7 +40,7 @@ namespace ASP.Gram.Migrations
 
             modelBuilder.Entity("ASP.Gram.Models.Post", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("PostID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -52,14 +52,14 @@ namespace ASP.Gram.Migrations
 
                     b.Property<int>("Likes");
 
-                    b.HasKey("ID");
+                    b.HasKey("PostID");
 
                     b.ToTable("Posts");
 
                     b.HasData(
                         new
                         {
-                            ID = 1,
+                            PostID = 1,
                             Author = "JTT",
                             Details = "Check out the orcas!",
                             ImageURL = "http://1.bp.blogspot.com/-rbBG3L514tQ/UD9eJuVrH1I/AAAAAAAAIo0/RKOGYNs0WwM/s400/Outer+Space+Wallpapers+6.jpg",
@@ -67,7 +67,7 @@ namespace ASP.Gram.Migrations
                         },
                         new
                         {
-                            ID = 3,
+                            PostID = 3,
                             Author = "Captain Kirk",
                             Details = "Captains log: We, have, found intelligent life on neptar.",
                             ImageURL = "http://1.bp.blogspot.com/-rbBG3L514tQ/UD9eJuVrH1I/AAAAAAAAIo0/RKOGYNs0WwM/s400/Outer+Space+Wallpapers+6.jpg",
@@ -75,7 +75,7 @@ namespace ASP.Gram.Migrations
                         },
                         new
                         {
-                            ID = 4,
+                            PostID = 4,
                             Author = "Legolas",
                             Details = "1 million orcs killed. Time to break out the champagne!",
                             ImageURL = "http://1.bp.blogspot.com/-rbBG3L514tQ/UD9eJuVrH1I/AAAAAAAAIo0/RKOGYNs0WwM/s400/Outer+Space+Wallpapers+6.jpg",
@@ -83,7 +83,7 @@ namespace ASP.Gram.Migrations
                         },
                         new
                         {
-                            ID = 5,
+                            PostID = 5,
                             Author = "John Snow",
                             Details = "I may not know much but I know how to kill white walkes!",
                             ImageURL = "http://1.bp.blogspot.com/-rbBG3L514tQ/UD9eJuVrH1I/AAAAAAAAIo0/RKOGYNs0WwM/s400/Outer+Space+Wallpapers+6.jpg",
@@ -91,7 +91,7 @@ namespace ASP.Gram.Migrations
                         },
                         new
                         {
-                            ID = 2,
+                            PostID = 2,
                             Author = "Miss Jackson",
                             Details = "I am for real!",
                             ImageURL = "http://1.bp.blogspot.com/-rbBG3L514tQ/UD9eJuVrH1I/AAAAAAAAIo0/RKOGYNs0WwM/s400/Outer+Space+Wallpapers+6.jpg",

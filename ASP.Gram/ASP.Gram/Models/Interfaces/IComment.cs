@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ASP.Gram.Models.Interfaces
 {
-    interface IComment
+    public interface IComment
     {
         Task<Comments> FindComment(int id);
         Task<List<Comments>> GetComments();

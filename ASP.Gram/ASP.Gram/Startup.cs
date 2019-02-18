@@ -30,6 +30,8 @@ namespace ASP.Gram
             services.AddMvc();
             services.AddDbContext<GramDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddScoped<IPosts, PostManager>();
+            services.AddScoped<IComment, CommentManager>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

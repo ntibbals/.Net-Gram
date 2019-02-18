@@ -26,15 +26,13 @@ namespace ASP.Gram.Pages.Posts
 
         public Models.Utilities.Blob BlobImage { get; set; }
 
-        public Comments Comment { get; set; }
 
         public ManageModel(IPosts post, IConfiguration configuration)
         {
             _post = post;
             ///Reference to blob storage account gateway to storage account
             BlobImage = new Models.Utilities.Blob(configuration);
-            Comment = new Comments();
-            
+
         }
         public async Task OnGetAsync()
         {
@@ -70,7 +68,7 @@ namespace ASP.Gram.Pages.Posts
 
             await _post.SaveAsync(post);
 
-            return RedirectToPage("/Posts/Index", new { id = post.ID });
+            return RedirectToPage("/Posts/Index", new { id = post.PostID });
         }
 
         public async Task<IActionResult> OnPostDelete()

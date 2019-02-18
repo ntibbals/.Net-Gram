@@ -27,7 +27,7 @@ namespace ASP.Gram.Models.Services
 
         public async Task<Post> FindPost(int id)
         {
-            Post post = await _context.Posts.FirstOrDefaultAsync(p => p.ID == id);
+            Post post = await _context.Posts.FirstOrDefaultAsync(p => p.PostID == id);
 
             return post;
         }
@@ -39,7 +39,7 @@ namespace ASP.Gram.Models.Services
 
         public async Task SaveAsync(Post post)
         {
-            Post po = await _context.Posts.FirstOrDefaultAsync(p => p.ID == post.ID);
+            Post po = await _context.Posts.FirstOrDefaultAsync(p => p.PostID == post.PostID);
 
             if (post == null)
             {
