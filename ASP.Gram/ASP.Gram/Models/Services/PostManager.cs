@@ -61,7 +61,7 @@ namespace ASP.Gram.Models.Services
         {
             Post po = await _context.Posts.FirstOrDefaultAsync(p => p.ID == post.ID);
 
-            if (post == null)
+            if (po == null)
             {
                 _context.Posts.Add(post);
             }
