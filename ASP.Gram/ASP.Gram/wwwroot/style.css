@@ -220,6 +220,9 @@ navToggle span:first-child {
 }
 /****************MANAGE PAGE****************/
 
+.post-title{
+    padding-top: 1vw;
+}
 #form-contain {
     display: flex;
     flex-direction: column;
@@ -330,6 +333,9 @@ footer{
         font-size: 5vw;
         padding: 1vw;
         line-height: 9.5vw;
+    }
+    .post-title {
+        padding-top: 2vw;
     }
     #url-contain {
         padding-right: 5.75vw;

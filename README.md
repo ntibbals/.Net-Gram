@@ -14,35 +14,36 @@ Azure Deployed Site: https://asphotgram.azurewebsites.net/
 
 ## Visuals
 
-### Desktob
-
-#### Home Page
-![SCHEMA]()
-
-#### Post Detail View
-![SCHEMA]()
-
-#### Post Edit View
-![SCHEMA]()
-
-#### Create New Post
-![SCHEMA]()
-
-
 ### Mobile
 
 #### Home Page
-![SCHEMA]()
-![SCHEMA]()
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/mobile-home.PNG)
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/mobile-home2.PNG)
 
 #### Post Detail View
-![SCHEMA]()
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/mobile-deets.PNG)
 
 #### Post Edit View
-![SCHEMA]()
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/mobile-edit.PNG)
 
 #### Create New Post
-![SCHEMA]()
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/mobile-create.PNG)
+
+
+### Desktob
+
+#### Home Page
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/Desk-home.PNG)
+
+#### Post Detail View
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/Desk-deets.PNG)
+
+#### Post Edit View
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/desk-edit.PNG)
+
+#### Create New Post
+![SCHEMA](https://github.com/ntibbals/ASP.Gram/blob/master/Assets/desk-create.PNG)
+
 
 
 
