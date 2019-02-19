@@ -11,6 +11,26 @@ namespace ASPGram_TDD
     public class UnitTest1
     {
         [Fact]
+        public void getID()
+        {
+            // can get ID
+            Post testPost = new Post();
+            testPost.ID = 7;
+            Assert.True(testPost.ID == 7);
+        }
+
+        [Fact]
+        public void setID()
+        {
+            // can set ID
+            Post testPost = new Post();
+            testPost.ID = 7;
+            testPost.ID = 77;
+            Assert.True(testPost.ID == 77);
+        }
+
+
+        [Fact]
         public async void TestSaveNewPost()
         {
             ///Test that you save
