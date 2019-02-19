@@ -29,7 +29,62 @@ namespace ASPGram_TDD
             Assert.True(testPost.ID == 77);
         }
 
+        [Fact]
+        public void getAuthor()
+        {
+            // can get Author
+            Post testPost = new Post();
+            testPost.Author = "JTT";
+            Assert.True(testPost.Author == "JTT");
+        }
 
+        [Fact]
+        public void setAuthor()
+        {
+            // can set Author
+            Post testPost = new Post();
+            testPost.Author = "JTT";
+            testPost.Author = "NTT";
+            Assert.True(testPost.Author == "NTT");
+        }
+
+        [Fact]
+        public void getDetails()
+        {
+            // can get Details
+            Post testPost = new Post();
+            testPost.Details = "test test test";
+            Assert.True(testPost.Details == "test test test");
+        }
+
+        [Fact]
+        public void setDetails()
+        {
+            // can set Details
+            Post testPost = new Post();
+            testPost.Details= "test test test";
+            testPost.Details = "fail fail fail";
+            Assert.True(testPost.Details == "fail fail fail");
+        }
+
+        [Fact]
+        public void getURL()
+        {
+            // can get URL
+            Post testPost = new Post();
+            testPost.ImageURL = "test.jpg";
+            Assert.True(testPost.ImageURL == "test.jpg");
+        }
+
+        [Fact]
+        public void setURL()
+        {
+            // can set URL
+            Post testPost = new Post();
+            testPost.ImageURL = "test.jpg";
+            testPost.ImageURL = "fail.jpg";
+            Assert.True(testPost.ImageURL == "fail.jpg");
+        }
         [Fact]
         public async void TestSaveNewPost()
         {
