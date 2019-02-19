@@ -1,0 +1,23 @@
+﻿@page "{id}"
+@model ASP.Gram.Pages.Posts.IndexModel
+@{ 
+    Layout = "_Layout";
+}
+
+<div id="post-contain">
+    <div id="image-contain">
+        <img src="@Model.Post.ImageURL" id="post-image" alt="Post Image" />
+
+    </div>
+    <div id="content-contain">
+        <div id="auth-contain">
+            <label asp-for"Post.Author">@Model.Post.Author : </label>
+        </div>
+        <div id="detail-contain">
+            <label asp-for="Post.Details">@Model.Post.Details</label>
+        </div>
+        <div id="but-contain">
+            <a asp-page="/Posts/Manage" asp-route-id="@Model.Post.ID" id="button">Update or Delete</a>
+        </div>
+    </div>
+    </div>

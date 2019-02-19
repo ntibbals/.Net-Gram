@@ -1,0 +1,37 @@
+﻿@page
+@using ASP.Gram.Models.Interfaces
+
+@inject IPosts PostService
+@{
+    Layout = "_Layout";
+}
+
+@{
+    var posts = await PostService.GetPosts();
+}
+
+
+    @foreach (var item in posts)
+    {
+<div id="post-contain">
+    <div id="image-contain">
+        <img src="@item.ImageURL" id="post-image" alt="Post Image" />
+    </div>
+    <div id="content-contain">
+
+        <div id="auth-contain">
+            <h2>@item.Author</h2>
+        </div>
+        @*<div id="like">
+            <h2><i class="fas fa-fire-alt"></i></h2>
+        </div>*@
+        <div id="detail-contain">
+            <h3>@item.Details</h3>
+        </div>
+        <div id="but-contain">
+            <a asp-page="/Posts/Index" asp-route-id="@item.ID" id="button">View</a>
+        </div>
+    </div>
+</div>
+    }
+

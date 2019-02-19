@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ASP.GRAM FAM</title>
+    <link href="~/reset.css" rel="stylesheet" />
+    <link href="~/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Kaushan+Script|Merienda+One|Sue+Ellen+Francisco|Yeseva+One" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="headcontain">
+            <div id="but-contain">
+                <a asp-page="/Posts/Manage" asp-route-id="null" id="button-new"><i class="far fa-plus-square"></i></a>
+
+                <a asp-page="/Index" asp-route-id="null" id="button-new"><i class="fas fa-home"></i></a>
+            </div>
+            <nav id="hamburger" role="navigation">
+                <div id="navToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="nav">
+                        <li><a id="links" href='/'> Home </a></li>
+                        <li><a id="links" href='/Posts/Manage'> New Post </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="indexcontain">
+                <h1 id="index-title"> ASP <strong id="hot">HOT</strong> GRAM</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div>
+            <p>© 2019 Copyright</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@page "{id?}"
+@model ASP.Gram.Pages.Posts.CommentModel
+@{
+    Layout = "_Layout";
+
+}
+
+<h1>Comments</h1>
+<div id="form-contain">
+    <form method="post" enctype="multipart/form-data" id="form">
+        <div>
+            <label asp-for="Comment.Author"></label>
+            <input asp-for="Comment.Author" id="input" />
+        </div>
+        <div>
+            <label asp-for="Comment.Comment"></label>
+            <input asp-for="Comment.Comment" id="input" />
+        </div>
+        <div id="but-contain">
+            <button type="submit" value="Save" id="button">Save</button>
+        </div>
+        <div id="but-contain">
+            <button type="submit" asp-page-handler="Delete" id="button">Delete</button>
+        </div>
+    </form>
+</div>
