@@ -182,12 +182,12 @@ navToggle span:first-child {
     border: solid 2px #000;
     border-radius: .5em;
     font-size: 1.5vw;
+    max-width: 95%;
 }
 #button:hover{
     color: #000;
 }
 #but-contain{
-    margin: 1.5vw;
     text-align: right;
 }
 
@@ -204,6 +204,7 @@ navToggle span:first-child {
     font-size: 3vw;
     padding: 1vw;
     line-height: 4.5vw;
+    max-width: 90%;
 }
 #button-new {
     padding: .3vw;
@@ -305,6 +306,7 @@ footer{
         border: solid 2px #000;
         border-radius: .5em;
         font-size: 3vw;
+        max-width: 95%;
     }
 
         #button:hover {
@@ -312,7 +314,6 @@ footer{
         }
 
     #but-contain {
-        margin: 1.5vw;
         text-align: right;
     }
 
@@ -333,6 +334,7 @@ footer{
         font-size: 5vw;
         padding: 1vw;
         line-height: 9.5vw;
+        max-width: 95%;
     }
     .post-title {
         padding-top: 2vw;
